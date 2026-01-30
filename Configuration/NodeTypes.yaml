@@ -1,6 +1,0 @@
-'Neos.Neos:Node':
-  ui:
-    inspector:
-      views:
-        nodeInfo:
-          view: 'AE.History/Views/NodeInfoView'
