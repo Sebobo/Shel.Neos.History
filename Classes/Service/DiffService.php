@@ -7,6 +7,7 @@ namespace AE\History\Service;
 use AE\History\Domain\Dto\Change;
 use AE\History\Domain\Dto\Changes;
 use AE\History\Domain\Dto\ChangeType;
+use Doctrine\ORM\EntityNotFoundException;
 use Neos\ContentRepository\Domain\Model\NodeInterface;
 use Neos\ContentRepository\Domain\Model\NodeType;
 use Neos\ContentRepository\Domain\Service\NodeTypeManager;
@@ -123,7 +124,11 @@ class DiffService
         }
 
         if ($propertyValue instanceof AssetInterface) {
-            $filename = $propertyValue->getResource()->getFilename();
+            try {
+                $filename = $propertyValue->getResource()->getFilename();
+            } catch (EntityNotFoundException) {
+                return '[value not available]';
+            }
             if ($simple) {
                 return $filename;
             }
