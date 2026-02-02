@@ -126,7 +126,7 @@ AE.History.HistoryController.index = Neos.Fusion:Component {
                 />
             </Neos.Fusion:Loop>
             <p @if={!props.eventsByDate}>
-                {props.id('history.messages.emptyHistory')}
+                {props.i18n.id('history.messages.emptyHistory')}
             </p>
         </div>
         <div class="neos-footer">
