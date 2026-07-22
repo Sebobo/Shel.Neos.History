@@ -23,6 +23,11 @@
         }
     }
 
+    .neos-history-node-link {
+        display: inline-flex;
+        gap: 1ch;
+    }
+
     .neos-content-diff {
         display: flex;
         flex-direction: column;
@@ -173,10 +178,6 @@
                     .neos-tooltip-inner {
                         white-space: nowrap;
                         max-width: none;
-                    }
-
-                    .icon-external-link {
-                        float: right;
                     }
                 }
 

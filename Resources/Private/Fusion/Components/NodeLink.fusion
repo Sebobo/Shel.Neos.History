@@ -25,28 +25,31 @@ prototype(Shel.Neos.History:Component.NodeLink) < prototype(Neos.Fusion:Componen
     }
 
     renderer = afx`
-        <Neos.Fusion:Fragment @if={props.event.node}>
+        <span class="neos-history-node-link">
+            <Neos.Fusion:Fragment @if={props.event.node}>
+                <a
+                    href={private.documentHistoryUri}
+                    title={private.breadcrumb}
+                    target="_blank"
+                >
+                    <i class={private.nodeTypeIcon}></i> {props.event.data.documentNodeLabel}
+                </a>
+                <Neos.Neos:NodeLink
+                    node={props.event.node}
+                    @context.documentNode={props.event.node}
+                    attributes.target="_blank"
+                >
+                    <i class="icon-external-link fas fa-external-link-alt"></i>
+                </Neos.Neos:NodeLink>
+            </Neos.Fusion:Fragment>
+
             <a
+                @if={!props.event.node}
                 href={private.documentHistoryUri}
-                title={private.breadcrumb}
+                title={props.i18n.id('history.nodeRemovedInMeantime').source('Modules').package('Neos.Neos')}
             >
                 <i class={private.nodeTypeIcon}></i> {props.event.data.documentNodeLabel}
             </a>
-            <Neos.Neos:NodeLink
-                node={props.event.node}
-                @context.documentNode={props.event.node}
-                attributes.target="_blank"
-            >
-                <i class="icon-external-link fas fa-external-link-alt"></i>
-            </Neos.Neos:NodeLink>
-        </Neos.Fusion:Fragment>
-
-        <a
-            @if={!props.event.node}
-            href={private.documentHistoryUri}
-            title={props.i18n.id('history.nodeRemovedInMeantime').source('Modules').package('Neos.Neos')}
-        >
-            <i class={private.nodeTypeIcon}></i> {props.event.data.documentNodeLabel}
-        </a>
+        </span>
     `
 }

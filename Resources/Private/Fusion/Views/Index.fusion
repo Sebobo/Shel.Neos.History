@@ -96,7 +96,7 @@ Shel.Neos.History.HistoryController.index = Neos.Fusion:Component {
 
                     <div @if={props.nodeIdentifier}>
                         <label>
-                            <b>{props.i18n.id('page').source('Main').package('Neos.Neos')}</b>
+                            <strong>{props.i18n.id('page').source('Main').package('Neos.Neos')}</strong>
                             <a href={props.resetUri} title={props.i18n.id('reset')}>
                                 <i class="icon-remove fas fa-times"></i>
                             </a>
