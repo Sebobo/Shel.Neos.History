@@ -94,6 +94,16 @@
     .neos-history-day {
         .neos-history-date {
             margin-left: 0;
+
+            .neos-history-date-inner {
+                line-height: 1.4em;
+                width: calc(2 * var(--spacing-GoldenUnit) - 10px);
+                height: calc(2 * var(--spacing-GoldenUnit) - 10px);
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
         }
 
         .neos-history-events {

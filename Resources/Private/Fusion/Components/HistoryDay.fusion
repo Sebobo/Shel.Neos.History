@@ -5,6 +5,7 @@ prototype(Shel.Neos.History:Component.HistoryDay) < prototype(Neos.Fusion:Compon
 
     @private {
         eventsByTime = ${Shel.Neos.History.Event.groupByTime(props.eventsOnSingleDay.events)}
+        isCurrentYear = ${Date.format(props.eventsOnSingleDay.day, 'Y') == Date.format(Date.now(), 'Y')}
     }
 
     renderer = afx`
@@ -14,7 +15,7 @@ prototype(Shel.Neos.History:Component.HistoryDay) < prototype(Neos.Fusion:Compon
                     class="neos-history-date-inner"
                     title={Date.format(props.eventsOnSingleDay.day, 'Y')}
                 >
-                    {Date.format(props.eventsOnSingleDay.day, 'M d')}
+                    {private.isCurrentYear ? Date.format(props.eventsOnSingleDay.day, 'M d') : Date.format(props.eventsOnSingleDay.day, 'M d Y')}
                 </div>
             </div>
 
