@@ -1,12 +1,12 @@
-prototype(AE.History:Component.Change.Renderer) < prototype(Neos.Fusion:Component) {
+prototype(Shel.Neos.History:Component.Change.Renderer) < prototype(Neos.Fusion:Component) {
     change = null
 
     @private {
-        oldValuePreview = AE.History:Component.Change.Matcher {
+        oldValuePreview = Shel.Neos.History:Component.Change.Matcher {
             type = ${props.change.oldType}
             value = ${props.change.oldValue}
         }
-        newValuePreview = AE.History:Component.Change.Matcher {
+        newValuePreview = Shel.Neos.History:Component.Change.Matcher {
             type = ${props.change.newType}
             value = ${props.change.newValue}
         }
@@ -21,6 +21,6 @@ prototype(AE.History:Component.Change.Renderer) < prototype(Neos.Fusion:Componen
                 {private.newValuePreview}
             </div>
         </div>
-        <AE.History:Component.Change.Diff diff={props.change.diff}/>
+        <Shel.Neos.History:Component.Change.Diff diff={props.change.diff}/>
     `
 }

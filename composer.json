@@ -1,8 +1,8 @@
 {
-  "name": "aertmann/history",
+  "name": "shel/neos-history",
   "type": "neos-package",
   "license": "MIT",
-  "description": "An improved history backend module for Neos",
+  "description": "An improved history backend module for Neos 8",
   "keywords": [
     "history",
     "event-log",
@@ -12,6 +12,10 @@
     {
       "name": "Aske Ertmann",
       "email": "aske@ertmann.co"
+    },
+    {
+      "name": "Sebastian Helzle",
+      "email": "me@helzle.it"
     }
   ],
   "require": {
@@ -20,12 +24,12 @@
   },
   "autoload": {
     "psr-4": {
-      "AE\\History\\": "Classes"
+      "Shel\\Neos\\History\\": "Classes"
     }
   },
   "extra": {
-    "branch-alias": {
-      "dev-master": "1.0.x-dev"
+    "neos": {
+      "package-key": "Shel.Neos.History"
     },
     "applied-flow-migrations": [
       "TYPO3.FLOW3-201201261636",

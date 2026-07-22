@@ -5,7 +5,7 @@ Neos:
         providers:
           'Neos.Neos:Backend':
             requestPatterns:
-              'AE.History:Controllers':
+              'Shel.Neos.History:Controllers':
                 pattern: 'ControllerObjectName'
                 patternOptions:
-                  controllerObjectNamePattern: 'AE\History\Controller\.*'
+                  controllerObjectNamePattern: 'Shel\Neos\History\Controller\.*'

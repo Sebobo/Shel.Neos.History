@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace AE\History\Domain\Dto;
+namespace Shel\Neos\History\Domain\Dto;
 
 final readonly class Change implements \JsonSerializable
 {

@@ -1,4 +1,4 @@
-prototype(AE.History:Component.Change.Image) < prototype(Neos.Fusion:Component) {
+prototype(Shel.Neos.History:Component.Change.Image) < prototype(Neos.Fusion:Component) {
     asset = null
 
     renderer = afx`

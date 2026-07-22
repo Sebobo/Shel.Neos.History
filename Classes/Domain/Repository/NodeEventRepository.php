@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace AE\History\Domain\Repository;
+namespace Shel\Neos\History\Domain\Repository;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Persistence\QueryResultInterface;

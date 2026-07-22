@@ -7,16 +7,16 @@ prototype(Neos.Neos:History.PublishedNode.AbstractSubEvent) < prototype(Neos.Fus
     linkedNode = afx`
         <strong>{event.data.nodeLabel}</strong>
     `
-    user = ${AE.History.Event.userName(event, 'fullFirstName')}
+    user = ${Shel.Neos.History.Event.userName(event, 'fullFirstName')}
 
     @context.eventsOfMatchedType = ${[event]}
 
     @private {
-        nodeTypeIcon = ${AE.History.Node.icon(props.event.node)}
-        identifier = ${AE.History.Event.identifier(event)}
-        userInitials = ${AE.History.Event.userName(event, 'initials')}
-        changes = ${AE.History.Event.changes(props.event)}
-        i18n = ${I18n.id('').source('Main').package('AE.History')}
+        nodeTypeIcon = ${Shel.Neos.History.Node.icon(props.event.node)}
+        identifier = ${Shel.Neos.History.Event.identifier(event)}
+        userInitials = ${Shel.Neos.History.Event.userName(event, 'initials')}
+        changes = ${Shel.Neos.History.Event.changes(props.event)}
+        i18n = ${I18n.id('').source('Main').package('Shel.Neos.History')}
         description = ${props.descriptionTranslationId ? private.i18n.id(props.descriptionTranslationId).source('Modules').package('Neos.Neos').arguments(props.descriptionTranslationArguments) : ''}
     }
 
@@ -40,7 +40,7 @@ prototype(Neos.Neos:History.PublishedNode.AbstractSubEvent) < prototype(Neos.Fus
                         <Neos.Fusion:Loop items={private.changes} itemName="change">
                             <div class="neos-content-diff__change">
                                 <strong>{change.propertyLabel}</strong>
-                                <AE.History:Component.Change.Renderer change={change}/>
+                                <Shel.Neos.History:Component.Change.Renderer change={change}/>
                             </div>
                         </Neos.Fusion:Loop>
                     </div>

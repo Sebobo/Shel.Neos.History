@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace AE\History\Service;
+namespace Shel\Neos\History\Service;
 
-use AE\History\Domain\Dto\Change;
-use AE\History\Domain\Dto\Changes;
-use AE\History\Domain\Dto\ChangeType;
+use Shel\Neos\History\Domain\Dto\Change;
+use Shel\Neos\History\Domain\Dto\Changes;
+use Shel\Neos\History\Domain\Dto\ChangeType;
 use Doctrine\ORM\EntityNotFoundException;
 use Neos\ContentRepository\Domain\Model\NodeInterface;
 use Neos\ContentRepository\Domain\Model\NodeType;
