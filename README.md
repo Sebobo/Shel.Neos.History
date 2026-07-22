@@ -19,7 +19,7 @@ This package is a modernized fork for Neos 8.x of the [AE.History](https://githu
 
 ## Installation
 
-`composer require "shel/neos-history:~2.0"`
+`composer require "shel/neos-history"`
 
 ## Screenshots
 
