@@ -15,7 +15,7 @@ Additionally, it provides a link in the node info view for document nodes in the
 
 Hides account creation/deletion events.
 
-This package is a modernized fork for Neos 8.x of the [Shel.Neos.History](https://github.com/aertmann/history) package by Aske Ertmann. 
+This package is a modernized fork for Neos 8.x of the [AE.History](https://github.com/aertmann/history) package by Aske Ertmann. 
 
 ## Installation
 
