@@ -26,13 +26,10 @@ This package is a modernized fork for Neos 8.x of the [AE.History](https://githu
 TODO: Update outdated screenshots
 
 General overview with site selection
-![Screenshot of general overview](Resources/Private/Images/history.jpg "General overview")
+![Screenshot of general overview](Resources/Private/Images/history.png "General overview")
 
 View of history for specific page
-![Screenshot of viewing specific page](Resources/Private/Images/specific-page.jpg "Specific page")
-
-Inspector link to history for specific page
-![Screenshot of inspector link to ](Resources/Private/Images/inspector.jpg "Inspector link")
+![Screenshot of viewing specific page](Resources/Private/Images/specific-page.png "Specific page")
 
 ## License
 
