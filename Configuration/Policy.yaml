@@ -1,11 +1,11 @@
 privilegeTargets:
   'Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
-    'AE.History:BackendModule':
-      matcher: 'within(AE\History\Controller\HistoryController) && method(public .*->(?!initialize).*Action())'
+    'Shel.Neos.History:BackendModule':
+      matcher: 'within(Shel\Neos\History\Controller\HistoryController) && method(public .*->(?!initialize).*Action())'
 
 roles:
   'Neos.Neos:Administrator':
     privileges:
       -
-        privilegeTarget: 'AE.History:BackendModule'
+        privilegeTarget: 'Shel.Neos.History:BackendModule'
         permission: GRANT

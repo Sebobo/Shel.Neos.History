@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace AE\History\Eel;
+namespace Shel\Neos\History\Eel;
 
 use Neos\ContentRepository\Domain\Model\NodeInterface;
 use Neos\ContentRepository\Exception\NodeTypeNotFoundException;

@@ -1,9 +1,9 @@
-prototype(AE.History:Component.NodeLink) < prototype(Neos.Fusion:Component) {
+prototype(Shel.Neos.History:Component.NodeLink) < prototype(Neos.Fusion:Component) {
     siteIdentifier = null
     accountIdentifier = null
     event = null
 
-    i18n = ${I18n.id('').source('Main').package('AE.History')}
+    i18n = ${I18n.id('').source('Main').package('Shel.Neos.History')}
 
     @private {
         documentHistoryUri = Neos.Fusion:ActionUri {
@@ -21,7 +21,7 @@ prototype(AE.History:Component.NodeLink) < prototype(Neos.Fusion:Component) {
             itemRenderer = ${Neos.Node.label(item)}
             @process.join = ${Array.join(value, ' / ')}
         }
-        nodeTypeIcon = ${'fas fa-' + AE.History.Node.icon(props.event.node)}
+        nodeTypeIcon = ${'fas fa-' + Shel.Neos.History.Node.icon(props.event.node)}
     }
 
     renderer = afx`

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace AE\History\Controller;
+namespace Shel\Neos\History\Controller;
 
-use AE\History\Domain\Repository\NodeEventRepository;
+use Shel\Neos\History\Domain\Repository\NodeEventRepository;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Mvc\View\ViewInterface;
 use Neos\Flow\Security\Context;
@@ -191,6 +191,6 @@ class HistoryController extends AbstractModuleController
     protected function initializeView(ViewInterface $view): void
     {
         parent::initializeView($view);
-        $view->setFusionPathPattern('resource://AE.History/Private/Fusion');
+        $view->setFusionPathPattern('resource://Shel.Neos.History/Private/Fusion');
     }
 }

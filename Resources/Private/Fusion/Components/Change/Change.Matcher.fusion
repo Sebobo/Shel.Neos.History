@@ -1,4 +1,4 @@
-prototype(AE.History:Component.Change.Matcher) < prototype(Neos.Fusion:Component) {
+prototype(Shel.Neos.History:Component.Change.Matcher) < prototype(Neos.Fusion:Component) {
     type = null
     value = null
 
@@ -9,13 +9,13 @@ prototype(AE.History:Component.Change.Matcher) < prototype(Neos.Fusion:Component
                 {String.htmlSpecialChars(props.value)}
             </pre>
         `
-        image = AE.History:Component.Change.Image {
+        image = Shel.Neos.History:Component.Change.Image {
             asset = ${Json.parse(props.value)}
         }
-        asset = AE.History:Component.Change.Asset {
+        asset = Shel.Neos.History:Component.Change.Asset {
             asset = ${Json.parse(props.value)}
         }
-        datetime = AE.History:Component.Change.DateTime {
+        datetime = Shel.Neos.History:Component.Change.DateTime {
             dateTime = ${props.value}
         }
         text = afx`

@@ -7,16 +7,16 @@ Neos:
       management:
         submodules:
           history:
-            controller: \AE\History\Controller\HistoryController
-            privilegeTarget: 'AE.History:BackendModule'
+            controller: \Shel\Neos\History\Controller\HistoryController
+            privilegeTarget: 'Shel.Neos.History:BackendModule'
             additionalResources:
               styleSheets:
-                'AE.History': 'resource://AE.History/Public/Styles/Module.css'
+                'Shel.Neos.History': 'resource://Shel.Neos.History/Public/Styles/Module.css'
               javaScripts:
-                'AE.History': 'resource://AE.History/Public/JavaScript/App.js'
+                'Shel.Neos.History': 'resource://Shel.Neos.History/Public/JavaScript/App.js'
 
     userInterface:
       translation:
         autoInclude:
-          'AE.History':
+          'Shel.Neos.History':
             - 'Main'

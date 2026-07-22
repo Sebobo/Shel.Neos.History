@@ -1,10 +1,10 @@
-prototype(AE.History:Component.HistoryDay) < prototype(Neos.Fusion:Component) {
+prototype(Shel.Neos.History:Component.HistoryDay) < prototype(Neos.Fusion:Component) {
     eventsOnSingleDay = ${[]}
     accountIdentifier = null
     siteIdentifier = null
 
     @private {
-        eventsByTime = ${AE.History.Event.groupByTime(props.eventsOnSingleDay.events)}
+        eventsByTime = ${Shel.Neos.History.Event.groupByTime(props.eventsOnSingleDay.events)}
     }
 
     renderer = afx`

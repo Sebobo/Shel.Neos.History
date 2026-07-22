@@ -1,5 +1,5 @@
 Neos:
   Fusion:
     defaultContext:
-      AE.History.Node: 'AE\History\Eel\NodeHelper'
-      AE.History.Event: 'AE\History\Eel\EventHelper'
+      Shel.Neos.History.Node: 'Shel\Neos\History\Eel\NodeHelper'
+      Shel.Neos.History.Event: 'Shel\Neos\History\Eel\EventHelper'

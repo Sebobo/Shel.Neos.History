@@ -1,4 +1,4 @@
-prototype(AE.History:Component.Change.Diff) < prototype(Neos.Fusion:Component) {
+prototype(Shel.Neos.History:Component.Change.Diff) < prototype(Neos.Fusion:Component) {
     diff = null
 
     renderer = afx`

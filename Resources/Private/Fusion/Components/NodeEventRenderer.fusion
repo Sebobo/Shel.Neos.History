@@ -1,4 +1,4 @@
-prototype(AE.History:Component.NodeEventRenderer) < prototype(Neos.Fusion:Component) {
+prototype(Shel.Neos.History:Component.NodeEventRenderer) < prototype(Neos.Fusion:Component) {
     accountIdentifier = ${accountIdentifier}
     event = ${event}
     nodeIdentifier = ${nodeIdentifier}
@@ -54,7 +54,7 @@ prototype(AE.History:Component.NodeEventRenderer) < prototype(Neos.Fusion:Compon
         <div class="neos-history-event">
             <div class="neos-history-event-arrow"></div>
             <h3 class="neos-history-event-title" @if={props.nodeIdentifier}>
-                <AE.History:Component.NodeLink
+                <Shel.Neos.History:Component.NodeLink
                     event={props.event}
                     accountIdentifier={props.accountIdentifier}
                     siteIdentifier={props.siteIdentifier}

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace AE\History\Eel;
+namespace Shel\Neos\History\Eel;
 
-use AE\History\Domain\Dto\Changes;
-use AE\History\Service\DiffService;
+use Shel\Neos\History\Domain\Dto\Changes;
+use Shel\Neos\History\Service\DiffService;
 use Neos\ContentRepository\Domain\Model\NodeType;
 use Neos\ContentRepository\Domain\Service\NodeTypeManager;
 use Neos\Diff\Renderer\Html\HtmlArrayRenderer;
