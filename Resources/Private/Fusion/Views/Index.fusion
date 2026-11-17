@@ -28,6 +28,7 @@ Shel.Neos.History.HistoryController.index = Neos.Fusion:Component {
                     form.target.action="index"
                     form.method="get"
                     form.data.siteIdentifier={props.siteIdentifier}
+                    form.data.accountIdentifier={props.accountIdentifier}
                     attributes.id="historyFilterForm"
                 >
                     <div @if={props.sites}>
