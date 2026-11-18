@@ -2,6 +2,7 @@ Shel.Neos.History.HistoryController.index = Neos.Fusion:Component {
     accountIdentifier = ${accountIdentifier}
     eventsByDate = ${eventsByDate}
     firstEvent = ${firstEvent}
+    inheritedEvents = ${inheritedEvents}
     nextPage = ${nextPage}
     nodeIdentifier = ${nodeIdentifier}
     siteIdentifier = ${siteIdentifier}
@@ -123,6 +124,7 @@ Shel.Neos.History.HistoryController.index = Neos.Fusion:Component {
                 <Shel.Neos.History:Component.HistoryDay
                     eventsOnSingleDay={eventsOnSingleDay}
                     accountIdentifier={props.accountIdentifier}
+                    inheritedEvents={props.inheritedEvents}
                     siteIdentifier={props.siteIdentifier}
                 />
             </Neos.Fusion:Loop>

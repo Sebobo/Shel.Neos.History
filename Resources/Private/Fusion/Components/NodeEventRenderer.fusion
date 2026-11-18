@@ -1,13 +1,14 @@
 prototype(Shel.Neos.History:Component.NodeEventRenderer) < prototype(Neos.Fusion:Component) {
     accountIdentifier = ${accountIdentifier}
     event = ${event}
+    inheritedEvents = ${inheritedEvents}
     nodeIdentifier = ${nodeIdentifier}
     siteIdentifier = ${siteIdentifier}
 
     content = Neos.Fusion:Join {
         @context {
-            contentEvents = ${Neos.Array.filterNegated(event.childEvents, 'documentEvent')}
-            documentEvents = ${Neos.Array.filter(event.childEvents, 'documentEvent')}
+            contentEvents = ${Neos.Array.filterNegated(Shel.Neos.History.Event.renderedChangeEvents(event, inheritedEvents), 'documentEvent')}
+            documentEvents = ${Neos.Array.filter(Shel.Neos.History.Event.renderedChangeEvents(event, inheritedEvents), 'documentEvent')}
         }
 
         documentEvents = Neos.Fusion:Loop {

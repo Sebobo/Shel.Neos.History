@@ -42,6 +42,35 @@ class EventHelper implements ProtectedContextAwareInterface
         return (string)$this->persistenceManager->getIdentifierByObject($event);
     }
 
+    /**
+     * The change events to render for a publish event: its direct child events, or - if it has
+     * none - the change events it inherits from the publish events of the source workspace.
+     *
+     * @param mixed $inheritedEvents map of publish event identifier to inherited change events, as assigned by the HistoryController
+     * @return Event[]
+     */
+    public function renderedChangeEvents(?Event $event, mixed $inheritedEvents): array
+    {
+        if ($event === null) {
+            return [];
+        }
+
+        $changeEvents = [];
+        foreach ($event->getChildEvents() as $childEvent) {
+            /** @var Event $childEvent */
+            $changeEvents[] = $childEvent;
+        }
+        if ($changeEvents !== []) {
+            return $changeEvents;
+        }
+
+        $identifier = (int)$this->persistenceManager->getIdentifierByObject($event);
+
+        return is_array($inheritedEvents) && isset($inheritedEvents[$identifier])
+            ? $inheritedEvents[$identifier]
+            : [];
+    }
+
     public function userName(?Event $event, $format = 'fullName'): string
     {
         if (!$event || !$event->getAccountIdentifier()) {

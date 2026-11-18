@@ -14,6 +14,7 @@ use Neos\Neos\Controller\Module\AbstractModuleController;
 use Neos\Neos\Domain\Repository\DomainRepository;
 use Neos\Neos\Domain\Repository\SiteRepository;
 use Neos\Neos\Domain\Service\UserService;
+use Neos\Neos\EventLog\Domain\Model\Event;
 use Neos\Neos\EventLog\Domain\Model\EventsOnDate;
 use Neos\Neos\EventLog\Domain\Model\NodeEvent;
 
@@ -142,9 +143,19 @@ class HistoryController extends AbstractModuleController
 
         /** @var EventsOnDate[] $eventsByDate */
         $eventsByDate = [];
+        /** @var array<int, Event[]> $inheritedEvents */
+        $inheritedEvents = [];
         foreach ($events as $event) {
-            if ($event->getChildEvents()->count() === 0) {
-                continue;
+            if (count($event->getChildEvents()) === 0) {
+                // A publish event of a workspace which itself was published from another
+                // workspace has no child events; resolve the change events it inherits
+                // through the publish events of its source workspace instead, and only skip
+                // the event if there is nothing to inherit either.
+                $inheritedChangeEvents = $this->nodeEventRepository->findInheritedChangeEvents($event);
+                if ($inheritedChangeEvents === []) {
+                    continue;
+                }
+                $inheritedEvents[(int)$this->persistenceManager->getIdentifierByObject($event)] = $inheritedChangeEvents;
             }
             $timestamp = $event->getTimestamp();
             $day = $timestamp->format('Y-m-d');
@@ -174,6 +185,7 @@ class HistoryController extends AbstractModuleController
         $this->view->assignMultiple([
             'accountIdentifier' => $accountIdentifier,
             'eventsByDate' => $eventsByDate,
+            'inheritedEvents' => $inheritedEvents,
             'firstEvent' => $firstEvent,
             'nextPage' => $nextPage,
             'nodeIdentifier' => $nodeIdentifier,

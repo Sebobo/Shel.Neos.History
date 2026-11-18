@@ -1,6 +1,7 @@
 prototype(Shel.Neos.History:Component.HistoryDay) < prototype(Neos.Fusion:Component) {
     eventsOnSingleDay = ${[]}
     accountIdentifier = null
+    inheritedEvents = ${[]}
     siteIdentifier = null
 
     @private {
@@ -33,6 +34,7 @@ prototype(Shel.Neos.History:Component.HistoryDay) < prototype(Neos.Fusion:Compon
                     <Neos.Fusion:Loop items={eventsByTime} itemName="event">
                         <Neos.Neos:History.EventRenderer
                             @context.accountIdentifier={props.accountIdentifier}
+                            @context.inheritedEvents={props.inheritedEvents}
                             @context.nodeIdentifier={event.nodeIdentifier}
                             @context.siteIdentifier={props.siteIdentifier}
                         />
